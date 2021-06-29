@@ -6,7 +6,7 @@
   <link href="http://enjoyvie.github.io.com/atom.xml" rel="self"/>
   
   <link href="http://enjoyvie.github.io.com/"/>
-  <updated>2021-06-29T01:25:37.072Z</updated>
+  <updated>2021-06-29T06:19:43.126Z</updated>
   <id>http://enjoyvie.github.io.com/</id>
   
   <author>
@@ -17,22 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>车载网络介绍</title>
+    <title>CAN总线安全分析</title>
     <link href="http://enjoyvie.github.io.com/2021/06/24/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/"/>
     <id>http://enjoyvie.github.io.com/2021/06/24/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/</id>
     <published>2021-06-24T09:26:05.132Z</published>
-    <updated>2021-06-29T01:25:37.072Z</updated>
+    <updated>2021-06-29T06:19:43.126Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>CAN总线是车载网络中必不可缺的一部分，本文简单的分析了CAN总线存在那些安全问题。文中只是作者的个人观点，仅供参考</p><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2&gt;&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot;&gt;Gene</summary>
+    <summary type="html">&lt;p&gt;CAN总线是车载网络中必不可缺的一部分，本文简单的分析了CAN总线存在那些安全问题。文中只是作者的个人观点，仅供参考&lt;/p&gt;
+&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2</summary>
       
     
     
     
+    
+    <category term="总线安全" scheme="http://enjoyvie.github.io.com/tags/%E6%80%BB%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
