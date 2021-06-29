@@ -6,7 +6,7 @@
   <link href="http://enjoyvie.github.io.com/atom.xml" rel="self"/>
   
   <link href="http://enjoyvie.github.io.com/"/>
-  <updated>2021-06-29T06:22:11.137Z</updated>
+  <updated>2021-06-29T07:16:55.609Z</updated>
   <id>http://enjoyvie.github.io.com/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="http://enjoyvie.github.io.com/2021/06/24/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/"/>
     <id>http://enjoyvie.github.io.com/2021/06/24/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/</id>
     <published>2021-06-24T09:26:05.132Z</published>
-    <updated>2021-06-29T06:22:11.137Z</updated>
+    <updated>2021-06-29T07:16:55.609Z</updated>
     
-    <content type="html"><![CDATA[<p>CAN总线是车载网络中必不可缺的一部分，本文简单的分析了CAN总线存在那些安全问题。文中只是作者的个人观点，仅供参考</p><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>控制器局域网 (Controller Area Network，简称 CAN或者 CAN bus) 是一种功能丰富的车用总线标准。被设计用于在不需要主机（Host）的情况下，允许网络上的单片机和仪器相互通信。 它基于信息传递协议，设计之初在车辆上采用复用通讯线缆，以降低铜线使用量，后来也被其他行业所使用。它是由研发和生产汽车电子产品著称的德国 BOSCH公司开发的，是国际上应用最广泛的现场总线之一。 </p><span id="more"></span><h2 id="CAN的国际标准化"><a href="#CAN的国际标准化" class="headerlink" title="CAN的国际标准化"></a>CAN的国际标准化</h2><ul><li>ISO11898 定义为 高速 CAN 通信标准，通讯速度达 125Kbps ~ 1Mbps，总线最大长度 40m/1Mbps，连接单元数最大 30，属于闭环总线，终端电阻：120Ω。</li><li>ISO11519 - 2 定义为 低速 CAN 通信标准，通讯速度在 125Kbps以下，总线最大长度 1km/40Kbps，连接单元数最大 20，属于开环总线，终端电阻：2.2KΩ。</li></ul><h2 id><a href="#" class="headerlink" title></a></h2><p>CAN总线拓扑图及架构</p><p><img src="/2021/06/24/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/CAN%E6%8B%93%E6%89%91.png" alt="CAN总线拓扑图及架构"></p><p>s://img-blog.csdnimg.cn/20200619173620363.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyOTkyMDg0,size_16,color_FFFFFF,t_70</p><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;CAN总线是车载网络中必不可缺的一部分，本文简单的分析了CAN总线存在那些安全问题。文中只是作者的个人观点，仅供参考&lt;/p&gt;
-&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2</summary>
-      
+    <summary type="html">&lt;p&gt;控制器局域网 (Controller Area Network，简称 CAN或者 CAN bus) 是一种功能丰富的车用总线标准。被设计用于在不需要主机（Host）的情况下，允许网络上的单片机和仪器相互通信。 它基于信息传递协议，设计之初在车辆上采用复用通讯线缆，以降低铜线使用量，后来也被其他行业所使用。它是由研发和生产汽车电子产品著称的德国 BOSCH公司开发的，是国际上应用最广泛的现场总线之一。 &lt;/p&gt;</summary>
     
     
     
@@ -38,26 +34,6 @@
     
     
     <category term="总线安全" scheme="http://enjoyvie.github.io.com/tags/%E6%80%BB%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://enjoyvie.github.io.com/2021/06/24/hello-world/"/>
-    <id>http://enjoyvie.github.io.com/2021/06/24/hello-world/</id>
-    <published>2021-06-24T03:21:20.712Z</published>
-    <updated>2021-06-24T03:21:20.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
