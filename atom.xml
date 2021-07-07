@@ -6,7 +6,7 @@
   <link href="http://enjoyvie.github.io.com/atom.xml" rel="self"/>
   
   <link href="http://enjoyvie.github.io.com/"/>
-  <updated>2021-06-30T07:41:28.613Z</updated>
+  <updated>2021-07-07T08:47:48.783Z</updated>
   <id>http://enjoyvie.github.io.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>V2X_Base</title>
+    <link href="http://enjoyvie.github.io.com/2021/07/07/V2X/"/>
+    <id>http://enjoyvie.github.io.com/2021/07/07/V2X/</id>
+    <published>2021-07-07T08:24:32.966Z</published>
+    <updated>2021-07-07T08:47:48.783Z</updated>
+    
+    <content type="html"><![CDATA[<p>V2X，顾名思义就是vehicle-to-everything，其希望实现车辆与一切可能影响车辆的实体实现信息交互，目的是减少事故发生，减缓交通拥堵，降低环境污染以及提供其他信息服务。</p><span id="more"></span><h3 id="V2X分类"><a href="#V2X分类" class="headerlink" title="V2X分类"></a>V2X分类</h3><pre><code>+ 车辆与车辆V2V(Vehicle-to-Vehicle)：常见应用如防碰撞安全系统+ 车辆与基础设施V2I(Vehicle-to-Infrastructure)：交通信号指示与时间提醒+ 车辆与行人V2P(Vehicle-to-Pedestrian)：行人单车安全距离警报  + 车辆与外部网络V2N(Vehicle-to-Network)：实时地图，云服务等</code></pre><p><img src="/2021/07/07/V2X/V2X.jpg" alt="V2X分类">    </p><h3 id="V2X使用的技术"><a href="#V2X使用的技术" class="headerlink" title="V2X使用的技术"></a>V2X使用的技术</h3><h4 id="1-DSRC技术"><a href="#1-DSRC技术" class="headerlink" title="1. DSRC技术"></a>1. DSRC技术</h4><p>DSRC技术的产生基于三套标准：</p><ul><li>第一个是IEEE 1609，标题为“车载环境无线接入标准系列（WAVE）”，其定义了网络的架构和流程。</li><li>第二个是SAE J2735和SAE J2945，它们定义了消息包中携带的信息。该数据将包括来自汽车上的传感器的信息，例如位置，行进方向，速度和刹车信息。</li><li>第三个标准是IEEE 802.11p，它定义了汽车相关的“专用短距离通信”（DSRC）的物理标准。DSRC顶层协议栈是基于IEEE 1609标准开发的，V2V信息交互是使用轻量WSMP（WAVE Short Message Protocol）而不是WIFI使用的TCP/IP协议，TCP/IP协议用于V2I和V2N信息交互。DSRC底层、物理层和无线链路控制是基于IEEE 802.11p。使用IEEE 802.11系列标准的初心是利用WIFI的生态系统，但是WIFI最初设计用于固定通讯设备，后来制定IEEE 802.11p支持移动通讯设备。（</li></ul><p><img src="/2021/07/07/V2X/dsrc.jpg" alt="DSRC协议栈"></p><p>尽管DSRC技术发展早，并且得到了广泛的实际验证和应用，但是也存在局限性：</p><ul><li>DSRC采用载波监听多路访问协议，在高密度的交通情况下会出现数据包译码失败的可能</li><li>DSRC物理成的正交频分复用技术限制了最大的传输功率和传输范围</li><li>DSRC属于视距传输技术，障碍物较多的城市工况对其构成挑战</li></ul><h4 id="2-C-V2X技术"><a href="#2-C-V2X技术" class="headerlink" title="2. C-V2X技术"></a>2. C-V2X技术</h4><p>针对DSRC技术可能存在的问题，通信产业提出了C-V2X解决方案。C-V2X是一项利用和提高现有的长期演进技术（Long Term Evolution，LTE）特点及网络要素的信息技术，是3GPP Realease-14规范的一部分，该初始标准侧重于V2V通信，并逐渐增强对其他V2X操作场景的支持。目前3GPP组织已经完成了LTE-V2X的业务需求、网络架构、无线接入技术和V2V/V2X业务方面的研究和标准化，并将LTE-V2X标准立项申请提交到国际标准化组织ISO。2018年11月针对智能交通系统中的LTE-V2X应用ISO/DIS17515-3标准已经进入最终的国际标准草案阶段。</p><p>相比于DSRC技术，C-V2X具有独有的优势和特点，如图3所示。首先C-V2X物理层采用频分复用技术，提高了链路预算增益，能比DSRC提供更长的预警时间和2倍的通信范围；其次5G技术的导入以及移动生态系统的完善将为C-V2X制定清晰的技术演变路线支持；另外利用移动蜂窝技术，能够快速的实现C-V2X系统的商业化，并且和车载远程信息处理服务相结合，进一步提高效率、降低成本。</p><p><img src="/2021/07/07/V2X/%E4%BA%8C%E8%80%85%E5%AF%B9%E6%AF%94.jpg" alt="DSRC与C-V2X特点对比"><br>然而目前C-V2X的基础技术LTE还存在不足：</p><ul><li><p>目前蜂窝网络难以达到毫秒级的低延迟</p></li><li><p>LTE采用增强型多媒体广播多波等技术进行单点到多点的接口管理，但是主要支持静态场景，对于车辆拥挤的情况可能无法提供所需的效能；</p></li></ul><p>未来5G将充分考虑这方面的特殊场景，针对汽车使用场景，5G V2X将具备如下特点：</p><ul><li><p>采用毫米波频谱提升频谱带宽，实现超高速数据传输；</p></li><li><p>吞吐量达到1Gb/s以上，具有更好的网络覆盖均匀性；</p></li><li><p>实现毫秒级的端对端延迟；</p></li><li><p>实现穿透式增强现实，查看前方车辆反馈的视频，并发现弱势道路使用者；</p></li></ul><p>目前全球正在加紧制定5G国际技术标准，中国已于2017年展开5G第二阶段测试，在2018年进行大规模组网实验，于今年6月正式发放5G牌照，标志中国5G由试运行转至商用。由于LTE的V2X平滑演进至5G，基于LTE的C-V2X能够与未来5G进行复用。</p><p>欧洲和亚洲是C-V2X的积极倡导者，并且结成了各种旨在开发、测试，推进C-V2X的伙伴关系，包括法国“驶向5G”战略合作、德国“汽车连接未来一切”等。中国将V2X作为智能网联车和智能交通的一部分，纳入“中国制造2025”“互联网+”等国家战略。目前国内积极在开展5G车辆网方面的部署，北京积极推动5G车辆网重点示范应用城市，并且2020年将在重点区域完成5G车联网建设；2019年7月14日国内首个自动驾驶5G车联网示范区在在广州黄埔区开建；南京铁塔、开沃汽车和大唐移动合作，共同推荐5G智能网联汽车业务的合作。另外由于美国在继续使用DSRC还是使用C-V2X上存在分歧，丰田公司搁置了原定2021在美国车型部署DSRC技术。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;V2X，顾名思义就是vehicle-to-everything，其希望实现车辆与一切可能影响车辆的实体实现信息交互，目的是减少事故发生，减缓交通拥堵，降低环境污染以及提供其他信息服务。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="V2X" scheme="http://enjoyvie.github.io.com/categories/V2X/"/>
+    
+    
+    <category term="V2X" scheme="http://enjoyvie.github.io.com/tags/V2X/"/>
+    
+  </entry>
   
   <entry>
     <title>LIN、CAN、FlexRay、MOST</title>
