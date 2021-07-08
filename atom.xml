@@ -6,7 +6,7 @@
   <link href="http://enjoyvie.github.io.com/atom.xml" rel="self"/>
   
   <link href="http://enjoyvie.github.io.com/"/>
-  <updated>2021-07-07T11:36:29.347Z</updated>
+  <updated>2021-07-08T08:00:30.610Z</updated>
   <id>http://enjoyvie.github.io.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CAN-FD</title>
+    <link href="http://enjoyvie.github.io.com/2021/07/08/CAN-FD/"/>
+    <id>http://enjoyvie.github.io.com/2021/07/08/CAN-FD/</id>
+    <published>2021-07-08T07:25:05.083Z</published>
+    <updated>2021-07-08T08:00:30.610Z</updated>
+    
+    <content type="html"><![CDATA[<p>当今社会，汽车已经成为了我们生活中不可缺少的一部分，人们希望汽车不仅仅是一种代步工具，更希望在汽车是生活及工作范围的一种延伸。在汽车上就像呆在自己的办公室和家里一样，可以打电话、上网、娱乐、工作。因此，汽车制造商为了提高产品竞争力，将越来越多功能集成到了汽车上。ECU（电子控制单元）大量地增加使总线负载率急剧增大，传统的CAN总线越来越显得力不从心。因此，CAN FD(CAN with Flexible Data-Rate)协议诞生了。</p><span id="more"></span><h3 id="CAN-FD的诞生"><a href="#CAN-FD的诞生" class="headerlink" title="CAN-FD的诞生"></a>CAN-FD的诞生</h3><p>随着电子、半导体、通讯等行业的快速发展，汽车电子智能化的诉求也越来越强，消费者希望驾驶动力性、舒适性、经济性以及娱乐性更强的汽车。汽车制造商为了提高产品竞争力，将越来越多的电子控制系统加入到汽车控制中，例如ESP（Electronic Stability Program，电子稳定程序）、PEPS（Passive Entry Passive Start无钥匙进入和启动系统）等。但是由于CAN总线的最高传输速率为1Mbit/s（通常汽车CAN系统的实际使用速率最高为500kbit/s），ECU（Electronic Control Unit，电子控制单元）的大量增加使总线负载率急剧增大以致造成网络拥堵，影响信息传输的可靠性和实时性。<br>不同的汽车，根据其级别、类型和配置的不同，ECU的数量和网络拓扑都不尽相同。图1所示的网络拓扑为经济型轿车中常见的网络拓扑，因为所有的ECU都在同一个CAN网段上，其总线负载率可能高达50～60%，而一般情况下，CAN总线负载率在30%左右时网络系统的性能相对较好，否则会增大报文延迟、降低系统的扩展性，尤其对于实时性要求较高的安全系统，高负载率甚至可能影响汽车行车安全；另一方面，CAN总线的位填充规则会对CRC(Cyclical Redundancy Check)造成干扰，引起错误帧漏检，使信息传输的可靠性达不到预期的设计要求，因此CAN总线将不能满足日益增长的汽车网络需求。<br>为解决带宽与可靠性的需求，有人提出在汽车网络中使用新的总线协议替代CAN总线，例如安全系统中使用FlexRay总线、娱乐系统中使用MOST总线，但需要重新开发控制器软硬件、重新设计车载网络系统等，这无疑会增加汽车制造商的开发成本，降低其市场竞争力，因此在目前车载网络系统的基础上对CAN总线进行改进显得尤其迫切。<br>2011年Bosch发布了CAN替代总线–CAN FD (CAN with Flexible Data-Rate) 1.1版。CAN FD比CAN总线的带宽更高，具有与CAN总线相似的控制器接口，这种相似性使ECU供应商不需要对ECU的软件部分做大规模修改，降低了开发难度和成本。CAN FD是CAN总线的升级换代设计，它继承了CAN总线的主要特性，提高了CAN总线的网络通信带宽，改善了错误帧漏检率，同时可以保持网络系统大部分软硬件特别是物理层不变。CAN FD协议充分利用CAN总线的保留位进行判断以及区分不同的帧格式[1]。在现有车载网络中应用CAN FD协议时，需要加入CAN FD控制器，但是CAN FD也可以参与到原来的CAN通信网络中，提高了网络系统的兼容性。</p><h3 id="CAN-FD帧格式"><a href="#CAN-FD帧格式" class="headerlink" title="CAN-FD帧格式"></a>CAN-FD帧格式</h3><p>引入CAN FD协议，对当前CAN网络系统物理层的改动较小，但是可以明显提高数据的串行通信速率， CAN-FD通过改变帧的格式增加总线带宽：一种方式为加长数据场长度减少报文数量降低总线负载率；另一种方式为缩短位时间提高位速率。CAN FD在数据帧内部采用两种不同的位速率，即在仲裁段（Arbitration-Phase）采用标准CAN位速率通信，在数据段（Data-Phase）采用高速率通信。<br>CAN-FD 数据帧在控制场新添加EDL位、BRS位、ESI位，采用了新的DLC编码方式、新的CRC算法（CRC场扩展到21位）。</p><p><img src="/2021/07/08/CAN-FD/%E5%B8%A7.png" alt="CAN-FD帧格式"></p><p>EDL位：（Extended Data Length）原CAN数据帧中的保留位r， 该位功能为：</p><ul><li>隐性： 表示CAN-FD 报文 （采用新的DLC编码和CRC算法）</li><li>显性： 表示CAN报文</li></ul><p>BRS位：（ Bit Rate Switch）该位功能为：</p><ul><li>隐性：表示转换可变速率</li><li>显性：表示不转换速率  </li></ul><p>ESI（Error State Indicator），该位的功能为： </p><ul><li>隐性：表示发送节点处于被动错误状态（Error Passive）</li><li>显性：表示发送节点处于主动错误状态（Error Active）</li></ul><p>EDL位可以表示CAN报文还是CAN-FD报文；BRS表示位速率转换，该位为隐性位时，从BRS位到CRC界定符使用转换速率传输，其他位场使用标准位速率，该位为显性时，以正常的CAN-FD总线速率传输；通过添加ESI位，可以很方便的知道当前发送节点所处的状态。<br>新的CRC算法。CAN总线由于位填充规则对CRC的干扰，造成错帧漏检率未达到设计意图。CAN-FD对CRC算法作了改变，即CRC以含填充位的位流进行计算。在校验和部分为避免再有连续位超过6个，就确定在第一位以及以后每4位添加一个填充位加以分割，这个填充位的值是上一位的反码，作为格式检查，如果填充位不是上一位的反码，就作出错处理。CAN-FD的CRC场扩展到了21位。由于数据场长度有很大变化区间，所以要根据DLC大小应用不同的CRC生成多项式，CRC_17，适合于帧长小于210位的帧，CRC_21，适适合于帧长小于1023位的帧。<br>新的DLC编码。CAN-FD 数据帧采用了新的新的DLC编码方式，在数据场长度在0-8个字节时，采用线性规则，数据场长度为12-64个字节时，使用非线性编码。</p><p><img src="/2021/07/08/CAN-FD/DLC.png" alt="DLC"></p><h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>　CAN FD是一种新协议，它保持了CAN协议的核心特征，并且拥有更高的带宽以及更长的数据长度，CAN FD在车载网络中可以沿用CAN总线的收发器，随着技术的发展也可以采用专用收发器，当采用CAN总线收发器时，其传输速率期望值为2.5 Mbit/s，相当于低速的FlexRay车载网络[5]。目前CAN FD还处于引入阶段，CAN FD通信可以用于特定用途，例如软件下载，此时其他不支持CAN FD的节点就保持睡眠状态。采用CAN FD协议的ECU无需改变应用程序以及CAN物理层便可用于现有网络系统，CAN网络向CAN FD网络过渡是简单方便而且易于实现的。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;当今社会，汽车已经成为了我们生活中不可缺少的一部分，人们希望汽车不仅仅是一种代步工具，更希望在汽车是生活及工作范围的一种延伸。在汽车上就像呆在自己的办公室和家里一样，可以打电话、上网、娱乐、工作。因此，汽车制造商为了提高产品竞争力，将越来越多功能集成到了汽车上。ECU（电子控制单元）大量地增加使总线负载率急剧增大，传统的CAN总线越来越显得力不从心。因此，CAN FD(CAN with Flexible Data-Rate)协议诞生了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="车载网络" scheme="http://enjoyvie.github.io.com/categories/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="总线安全" scheme="http://enjoyvie.github.io.com/tags/%E6%80%BB%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Sybil攻击</title>
