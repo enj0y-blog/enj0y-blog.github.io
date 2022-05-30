@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>V2X_Base | Internet of Vehicles</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','true','auto');ga('send','pageview');
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">V2X_Base</h1><a id="logo" href="/.">Internet of Vehicles</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">V2X_Base</h1><div class="post-meta">2022-05-30<span> | </span><span class="category"><a href="/categories/V2X/">V2X</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 1.4k</span><span class="post-meta-item-text"> Words</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 5</span><span class="post-meta-item-text"> Minutes</span></span></span></div><a class="disqus-comment-count" href="/2022/05/30/V2X/#vcomment"><span class="valine-comment-count" data-xid="/2022/05/30/V2X/"></span><span> Comment</span></a><div class="post-content"><p>V2X，顾名思义就是vehicle-to-everything，其希望实现车辆与一切可能影响车辆的实体实现信息交互，目的是减少事故发生，减缓交通拥堵，降低环境污染以及提供其他信息服务。</p>
+<span id="more"></span>
+
+<h3 id="V2X分类"><a href="#V2X分类" class="headerlink" title="V2X分类"></a>V2X分类</h3><ul>
+<li>车辆与车辆V2V(Vehicle-to-Vehicle)：常见应用如防碰撞安全系统</li>
+<li>车辆与基础设施V2I(Vehicle-to-Infrastructure)：交通信号指示与时间提醒</li>
+<li>车辆与行人V2P(Vehicle-to-Pedestrian)：行人单车安全距离警报  </li>
+<li>车辆与外部网络V2N(Vehicle-to-Network)：实时地图，云服务等</li>
+</ul>
+<p><img src="/2022/05/30/V2X/V2X.jpg" alt="V2X分类">    </p>
+<h3 id="V2X使用的技术"><a href="#V2X使用的技术" class="headerlink" title="V2X使用的技术"></a>V2X使用的技术</h3><h4 id="1-DSRC技术"><a href="#1-DSRC技术" class="headerlink" title="1. DSRC技术"></a>1. DSRC技术</h4><p>DSRC技术的产生基于三套标准：</p>
+<ul>
+<li>第一个是IEEE 1609，标题为“车载环境无线接入标准系列（WAVE）”，其定义了网络的架构和流程。</li>
+<li>第二个是SAE J2735和SAE J2945，它们定义了消息包中携带的信息。该数据将包括来自汽车上的传感器的信息，例如位置，行进方向，速度和刹车信息。</li>
+<li>第三个标准是IEEE 802.11p，它定义了汽车相关的“专用短距离通信”（DSRC）的物理标准。DSRC顶层协议栈是基于IEEE 1609标准开发的，V2V信息交互是使用轻量WSMP（WAVE Short Message Protocol）而不是WIFI使用的TCP/IP协议，TCP/IP协议用于V2I和V2N信息交互。DSRC底层、物理层和无线链路控制是基于IEEE 802.11p。使用IEEE 802.11系列标准的初心是利用WIFI的生态系统，但是WIFI最初设计用于固定通讯设备，后来制定IEEE 802.11p支持移动通讯设备。（</li>
+</ul>
+<p><img src="/2022/05/30/V2X/dsrc.jpg" alt="DSRC协议栈"></p>
+<p>尽管DSRC技术发展早，并且得到了广泛的实际验证和应用，但是也存在局限性：</p>
+<ul>
+<li>DSRC采用载波监听多路访问协议，在高密度的交通情况下会出现数据包译码失败的可能</li>
+<li>DSRC物理成的正交频分复用技术限制了最大的传输功率和传输范围</li>
+<li>DSRC属于视距传输技术，障碍物较多的城市工况对其构成挑战</li>
+</ul>
+<h4 id="2-C-V2X技术"><a href="#2-C-V2X技术" class="headerlink" title="2. C-V2X技术"></a>2. C-V2X技术</h4><p>针对DSRC技术可能存在的问题，通信产业提出了C-V2X解决方案。C-V2X是一项利用和提高现有的长期演进技术（Long Term Evolution，LTE）特点及网络要素的信息技术，是3GPP Realease-14规范的一部分，该初始标准侧重于V2V通信，并逐渐增强对其他V2X操作场景的支持。目前3GPP组织已经完成了LTE-V2X的业务需求、网络架构、无线接入技术和V2V/V2X业务方面的研究和标准化，并将LTE-V2X标准立项申请提交到国际标准化组织ISO。2018年11月针对智能交通系统中的LTE-V2X应用ISO/DIS17515-3标准已经进入最终的国际标准草案阶段。</p>
+<p>相比于DSRC技术，C-V2X具有独有的优势和特点，如图3所示。首先C-V2X物理层采用频分复用技术，提高了链路预算增益，能比DSRC提供更长的预警时间和2倍的通信范围；其次5G技术的导入以及移动生态系统的完善将为C-V2X制定清晰的技术演变路线支持；另外利用移动蜂窝技术，能够快速的实现C-V2X系统的商业化，并且和车载远程信息处理服务相结合，进一步提高效率、降低成本。</p>
+<p><img src="/2022/05/30/V2X/%E4%BA%8C%E8%80%85%E5%AF%B9%E6%AF%94.jpg" alt="DSRC与C-V2X特点对比"><br>然而目前C-V2X的基础技术LTE还存在不足：</p>
+<ul>
+<li><p>目前蜂窝网络难以达到毫秒级的低延迟</p>
+</li>
+<li><p>LTE采用增强型多媒体广播多波等技术进行单点到多点的接口管理，但是主要支持静态场景，对于车辆拥挤的情况可能无法提供所需的效能；</p>
+</li>
+</ul>
+<p>未来5G将充分考虑这方面的特殊场景，针对汽车使用场景，5G V2X将具备如下特点：</p>
+<ul>
+<li><p>采用毫米波频谱提升频谱带宽，实现超高速数据传输；</p>
+</li>
+<li><p>吞吐量达到1Gb/s以上，具有更好的网络覆盖均匀性；</p>
+</li>
+<li><p>实现毫秒级的端对端延迟；</p>
+</li>
+<li><p>实现穿透式增强现实，查看前方车辆反馈的视频，并发现弱势道路使用者；</p>
+</li>
+</ul>
+<p>目前全球正在加紧制定5G国际技术标准，中国已于2017年展开5G第二阶段测试，在2018年进行大规模组网实验，于今年6月正式发放5G牌照，标志中国5G由试运行转至商用。由于LTE的V2X平滑演进至5G，基于LTE的C-V2X能够与未来5G进行复用。</p>
+<p>欧洲和亚洲是C-V2X的积极倡导者，并且结成了各种旨在开发、测试，推进C-V2X的伙伴关系，包括法国“驶向5G”战略合作、德国“汽车连接未来一切”等。中国将V2X作为智能网联车和智能交通的一部分，纳入“中国制造2025”“互联网+”等国家战略。目前国内积极在开展5G车辆网方面的部署，北京积极推动5G车辆网重点示范应用城市，并且2020年将在重点区域完成5G车联网建设；2019年7月14日国内首个自动驾驶5G车联网示范区在在广州黄埔区开建；南京铁塔、开沃汽车和大唐移动合作，共同推荐5G智能网联汽车业务的合作。另外由于美国在继续使用DSRC还是使用C-V2X上存在分歧，丰田公司搁置了原定2021在美国车型部署DSRC技术。</p>
+</div><div class="tags"><a href="/tags/V2X%E5%AE%89%E5%85%A8/"><i class="fa fa-tag"></i>V2X安全</a></div><div class="post-nav"><a class="pre" href="/2022/05/30/autosar/">AUTOSAR</a><a class="next" href="/2022/05/30/CAN-FD/">CAN-FD</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = '1753091809@qq.com' == 'true' ? true : false;
+var verify = 'false' == 'true' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'1w5nkLmYp0oBvRL1NjJ6LBrm-gzGzoHsz',
+  appKey:'s6Yk1ppHcgfTwEsKlCj9cx28',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'5'
+})
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://enj0y-blog.github.io.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/V2X/">V2X</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/">车载网络</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/%E6%80%BB%E7%BA%BF%E5%AE%89%E5%85%A8/" style="font-size: 15px;">总线安全</a> <a href="/tags/V2X%E5%AE%89%E5%85%A8/" style="font-size: 15px;">V2X安全</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/%E8%BD%A6%E8%BD%BD%E7%BD%91%E7%BB%9C/">CAN总线分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/%E5%9B%9B%E5%A4%A7%E6%80%BB%E7%BA%BF/">LIN、CAN、FlexRay、MOST</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/sybil/">Sybil攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/autosar/">AUTOSAR</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/V2X/">V2X_Base</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/30/CAN-FD/">CAN-FD</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a title="Sharpblog" target="_blank">Sharpblog</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2022 <a href="/." rel="nofollow">Internet of Vehicles.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.min.js"></script><script type="text/javascript" src="/js/love.js"></script><script type="text/javascript" src="/js/copycode.js" successtext="Copy Successed!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
